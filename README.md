@@ -13,9 +13,6 @@ build a client-side application that lists the top businesses around a specified
 * You may use any resources, frameworks, libraries, etc and style the markup however you like.
 
 ## Requirements
-
-Using the provided JSON data representing a collection of meal recipes, create a micro frontend application that meets the following criteria:
-
 * Use the public GraphQL API provided by Yelp, for more information, see [here](https://www.yelp.com/developers/graphql/guides/intro).
 * Provide way for the user to specify a location by zip code and distance.
 * Display a list (or table) of businesses that match the search parameters.
