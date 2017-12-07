@@ -1,7 +1,10 @@
 DataScience's Frontend Code Test
 ==================
 
-This is an at-home exercise that we use as part of our standard interview process for frontend and full-stack developers.
+This is an at-home exercise that we use as part of our standard interview process for frontend and full-stack developers. It requirements are designed to provide us with enough insight to evaluate your skillset, but feel free to expand on its feature set if you have time (not required).
+
+In this test, you will be using the public GraphQL api provided by Yelp to
+build a client-side application that lists the top businesses around a specified location.
 
 ## Instructions
 
@@ -13,10 +16,11 @@ This is an at-home exercise that we use as part of our standard interview proces
 
 Using the provided JSON data representing a collection of meal recipes, create a micro frontend application that meets the following criteria:
 
-* Display a list (or table) of recipes.
-* Allow filtering of recipes by a single ingredient.
-* Add checkboxes to allow selection of multiple recipes.
-* Show an alphabetically ordered list of distinct ingredients for the selected recipes. This should update as recipes are selected / unselected.
-* Persist the selections locally and regenerate the view on page refresh.
+* Use the public graphql api provided by yelp, for more information, see [here](https://www.yelp.com/developers/graphql/guides/intro).
+* Provide way for the user to specify a location by zip code and distance.
+* Display a list (or table) of businesses that match the search parameters.
+* Allow filtering of recipes by category.
+* Add a way for users to "favorite" certain businesses (state should be completely client-side)
+* Show an alphabetically ordered list of favorite businesses. This should update as recipes are selected / unselected.
+* Persist the favorite list locally and regenerate the view on page refresh.
 * In a README note any required setup to be able to run the app, such as modifying hosts file, etc.
-
