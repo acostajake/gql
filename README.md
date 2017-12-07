@@ -1,9 +1,9 @@
 DataScience's Frontend Code Test
 ==================
 
-This is an at-home exercise that we use as part of our standard interview process for frontend and full-stack developers. It requirements are designed to provide us with enough insight to evaluate your skillset, but feel free to expand on its feature set if you have time (not required).
+This is an at-home exercise that we use as part of our standard interview process for frontend and full-stack developers. Its requirements are designed to provide us with enough insight to evaluate your skillset, but feel free to expand on its feature set if you have time (not required).
 
-In this test, you will be using the public GraphQL api provided by Yelp to
+In this test, you will be using the public GraphQL API provided by Yelp to
 build a client-side application that lists the top businesses around a specified location.
 
 ## Instructions
@@ -16,7 +16,7 @@ build a client-side application that lists the top businesses around a specified
 
 Using the provided JSON data representing a collection of meal recipes, create a micro frontend application that meets the following criteria:
 
-* Use the public graphql api provided by yelp, for more information, see [here](https://www.yelp.com/developers/graphql/guides/intro).
+* Use the public GraphQL API provided by Yelp, for more information, see [here](https://www.yelp.com/developers/graphql/guides/intro).
 * Provide way for the user to specify a location by zip code and distance.
 * Display a list (or table) of businesses that match the search parameters.
 * Allow filtering of businesses by category.
