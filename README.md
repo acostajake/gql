@@ -1,5 +1,4 @@
-DataScience's Frontend Code Test
-==================
+# DataScience's Frontend Code Test
 
 This is an at-home exercise that we use as part of our standard interview process for frontend and full-stack developers. Its requirements are designed to provide us with enough insight to evaluate your skillset, but feel free to expand on its feature set if you have time (not required).
 
@@ -10,9 +9,10 @@ build a client-side application that lists the top businesses around a specified
 
 * Clone this repo
 * Complete the exercise and submit either a zip of the solution or a link to a new repo
-* You may use any resources, frameworks, libraries, etc and style the markup however you like.
+* You must use ReactJS but apart from that, you can use any resources, libraries, etc and style the markup however you like.
 
 ## Requirements
+
 * Use the public GraphQL API provided by Yelp, for more information, see [here](https://www.yelp.com/developers/graphql/guides/intro).
 * Provide way for the user to specify a location by zip code and distance.
 * Display a list (or table) of businesses that match the search parameters.
