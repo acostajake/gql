@@ -20,11 +20,4 @@ build a client-side application that lists the top businesses around a specified
 * Add a way for users to "favorite" certain businesses (state should be completely client-side)
 * Show an alphabetically ordered list of favorite businesses. This should update as businesses are starred / unstarred.
 * Persist the favorite list locally and regenerate the view on page refresh.
-* In a README note any required setup to be able to run the app, such as modifying hosts file, etc.
-
-## Extra Credit
-
-* Hook up the repo to a CI server and have it build with each push
-* Dockerize the app so it can run anywhere Docker is present
-* Deploy the app to any remote server and provide a URL for review
-* Create GitHub issues for improvements you'd make if you had more time or for bugs you weren't able to fix in time.
+* In a README note any required setup to be able to run the app
