@@ -7,7 +7,7 @@ build a client-side application that lists the top businesses around a specified
 
 In order to circumvent some security issues that would otherwise pop up, we have included a [server](./server.js)
 that will run at `localhost:3000`. This should redirect your requests to Yelp's API. Remember to add your access
-token. Feel free to change this file (or remove it all together) to fit your needs.
+token. Feel free to change this file to fit your needs (or remove it all together).
 
 ## Instructions
 
