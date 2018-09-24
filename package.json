@@ -1,0 +1,21 @@
+{
+  "name": "frontend-code-test",
+  "version": "1.0.0",
+  "description": "This is an at-home exercise that we use as part of our standard interview process for frontend and full-stack developers. Its requirements are designed to provide us with enough insight to evaluate your skillset, but feel free to expand on its feature set if you have time (not required).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true
+  },
+  "dependencies": {
+    "apollo-server": "^2.1.0",
+    "graphql": "^14.0.2",
+    "graphql-tools": "^4.0.0",
+    "node-fetch": "^2.2.0"
+  }
+}
