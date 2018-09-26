@@ -6,6 +6,11 @@ const {
   introspectSchema,
   makeRemoteExecutableSchema
 } = require("graphql-tools");
+const express = require('express');
+const cors = require('cors');
+const app = express();
+
+app.use(cors())
 
 // a fetcher to fire queries at the yelp api
 const fetcher = async ({
@@ -21,8 +26,8 @@ const fetcher = async ({
   const fetchResult = await fetch("https://api.yelp.com/v3/graphql", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
-      // Authorization: "Bearer ..."
+      "Content-Type": "application/json",
+      Authorization: "Bearer DQMs_qNQqV6tg1s9eXF9o1P8R6koNTXHFUcqCgwy-9-bIQzxTTCuMX0dzChkpX9jI64PLJPIOjpWfLUSJNC7MCTqPfmjlpSUUxb6f07j-8x0YgAID7LGn4KcUlqpW3Yx"
     },
     body: JSON.stringify({ query, variables, operationName })
   });
@@ -37,6 +42,7 @@ const fetcher = async ({
   }
 
   // pass the result
+  console.log('server: ', data)
   return { data, error };
 };
 
