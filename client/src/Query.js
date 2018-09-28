@@ -1,44 +1,44 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
+import ApolloClient from 'apollo-boost';
+import FavButton from './FavButton';
 
-const GET_ANY = gql`
-{
+const YelpQuery = gql`
+  {
     business(id: "Menottis-Venice") {
-        name
-        location{
-          formatted_address
-        }
-    		id
-        coordinates {
-            latitude
-            longitude
-        }
-    hours{
-      is_open_now
+      name
+      location {
+        formatted_address
+      }
+      id
+      coordinates {
+        latitude
+        longitude
+      }
+      hours {
+        is_open_now
+      }
     }
-    }
-}
+  }
 `
 
-const Any = ({ onAnySelected }) => (
-  <Query query={GET_ANY}>
+const Results = () => (
+  <Query query={YelpQuery}>
     {({ loading, error, data }) => {
-      if (loading) return 'loading...'
-      if (error) return `Error ${error.message}`
+      if (loading) return <p>Loading...</p>
+      if (error) return <p>Error :(</p>
+      //should return data blob when hitting 3030
       console.log(data)
-
       return (
-        <select name="name" onChange={onAnySelected}>
-          {data.business.name.map(business => (
-            <option key={business.name} value={business.id}>
-              {business.name}
-            </option>
-          ))}
-        </select>
+        <div>
+          <div>Business: {data.business.name}</div>
+          <div>Address: {data.business.location.formatted_address}</div>
+          <FavButton />
+        </div>
       )
-    }}
+    }}    
   </Query>
 )
 
-export default Any;
+export default Results;

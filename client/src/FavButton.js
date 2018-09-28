@@ -15,7 +15,6 @@ class FavButton extends Component {
         console.log('like or unlike')
         if(this.state.isFav === false) this.setState({ icon: true })
         if(!this.state.isFav === true) this.setState({ icon: false })
-        console.log(this.state.isFav, this.state.icon)
     }
 
     render() {
