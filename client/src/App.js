@@ -21,7 +21,7 @@ class App extends Component {
           <p className="App-intro">Ready!</p>
           <Location />
           <CategoryFilter />
-          <Results />
+          <Results client={client}/>
         </div>
       </ApolloProvider>
     )

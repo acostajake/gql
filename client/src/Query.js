@@ -1,44 +1,46 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
-import ApolloClient from 'apollo-boost';
 import FavButton from './FavButton';
 
+//returns results of hard-coded values after hitting Yelp API
 const YelpQuery = gql`
   {
-    business(id: "Menottis-Venice") {
-      name
-      location {
-        formatted_address
-      }
-      id
-      coordinates {
-        latitude
-        longitude
-      }
-      hours {
-        is_open_now
+    search(term: "coffee", location: "santa monica", radius: 100, limit: 10) {
+      business {
+        name
+        location {
+          formatted_address
+        }
       }
     }
   }
 `
 
 const Results = () => (
-  <Query query={YelpQuery}>
-    {({ loading, error, data }) => {
-      if (loading) return <p>Loading...</p>
-      if (error) return <p>Error :(</p>
-      //should return data blob when hitting 3030
-      console.log(data)
-      return (
-        <div>
-          <div>Business: {data.business.name}</div>
-          <div>Address: {data.business.location.formatted_address}</div>
-          <FavButton />
-        </div>
-      )
-    }}    
-  </Query>
+    <Query query={YelpQuery}>
+      {({ loading, error, data }) => {
+        if (loading) return <p>Loading...</p>
+        if (error) return <p>Error :(</p>
+        //should return data blob when hitting 3030
+        let array = []
+        let resReturn = data.search.business
+        for (let item in resReturn) {
+          array.push(resReturn[item])
+        }
+        //returns results of call to API
+        return (
+          <div>
+            {array.map(foundItem => (
+              <div key={foundItem.name}>
+                {foundItem.name}
+                <FavButton />
+              </div>
+            ))}
+          </div>
+        )
+      }}
+    </Query>
 )
 
-export default Results;
+export default Results

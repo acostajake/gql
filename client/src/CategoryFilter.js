@@ -1,11 +1,24 @@
-//Allow filtering of businesses by category.
+//Allow filtering of businesses by category
+
 import React, { Component } from 'react'
+// import gql from 'graphql-tag'
+
+//Implement Mutation here?
+// const YelpQuery = gql`
+//   {
+//     categories {
+//       category {
+//         alias
+//       }
+//     }
+//   }
+// `
 
 class CategoryFilter extends Component {
   constructor() {
     super()
     this.state = {
-      category: ""
+      alias: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -18,21 +31,20 @@ class CategoryFilter extends Component {
   }
 
   handleSubmit(e) {
-      e.preventDefault();
-      console.log('filter API call')
+    e.preventDefault()
+      //need to take in value and pass to Graphql query for results
   }
-
+  
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="category" onChange={this.handleChange} value={this.state.category} />
+          <input type="text" name="category" onChange={this.handleChange} value={this.state.alias} />
           <button type="submit">Enter</button>
-        </form>        
-        <div>{this.state.category}</div>
+        </form>
       </div>
     )
   }
 }
 
-export default CategoryFilter;
+export default CategoryFilter

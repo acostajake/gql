@@ -1,35 +1,35 @@
-//Add a way for users to "favorite" certain businesses (state should be completely client-side)
+//Users can "favorite" each result from query
+//Need to update to maintain state
 
 import React, { Component } from 'react';
 
 class FavButton extends Component {
     constructor() {
-        super();
-        this.state = {
-            isFav: false,
-            icon: false //replace from library to animate
-        }        
+      super();
+      this.state = {
+        faved: false
+      };
+      this.handleClick = this.handleClick.bind(this);
+    } 
+    
+    handleClick() {
+      this.setState({
+        faved: !this.state.faved
+      });
     }
-
-    fav() {
-        console.log('like or unlike')
-        if(this.state.isFav === false) this.setState({ icon: true })
-        if(!this.state.isFav === true) this.setState({ icon: false })
-    }
-
+    
     render() {
-        return (
-            <div>
-                <button onClick={this.fav.bind(this)}>Click to like</button>
-                {this.state.icon === false ? (
-                    <div>False</div>
-                ) : (
-                    <div>True</div>
-                )
-                }
-            </div>
-        )
+      const label = this.state.faved ? 'Yep!' : 'Nah'
+      return (
+        <div>
+          <button onClick={this.handleClick}>Enter</button>
+          <div>
+            Worth trying? {label}
+          </div>
+        </div>
+      );
     }
-}
+  }
+  
 
 export default FavButton;

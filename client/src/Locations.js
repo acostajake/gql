@@ -21,7 +21,7 @@ class Location extends Component {
 
   handleSubmit(e) {
       e.preventDefault();
-      console.log('time to hit API')
+      console.log('time to hit API', this.state.zip, this.state.distance)
   }
 
   render() {
@@ -29,7 +29,7 @@ class Location extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <input type="number" name="zip" onChange={this.handleChange} value={this.state.zip} />
-          <select onChange={this.handleChange} value={this.state.distance}>Miles from zip:
+          <select type="number" name="distance" onChange={this.handleChange} value={this.state.distance}>Miles from zip:
               <option>Select</option>
               <option>1</option>
               <option>5</option>
